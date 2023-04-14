@@ -17,7 +17,7 @@ public class CatMethodsTest {
     private List<String> expectedListOfFood = List.of("Животные", "Птицы", "Рыба");
 
     @Test
-    public void CatSoundReturnMeow() {
+    public void catSoundReturnMeow() {
         Cat cat = new Cat(feline);
         Assert.assertEquals("Мяу", cat.getSound());
     }

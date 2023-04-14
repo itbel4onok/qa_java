@@ -30,4 +30,13 @@ public class LionMethodsTest {
         Mockito.when(feline.getFood("Хищник")).thenReturn(expectedListOfFood);
         Assert.assertEquals(expectedListOfFood, lion.getFood());
     }
+
+    @Test
+    public void lionSexNegativeScenario() {
+        String incorrectValueOfSex = "Другое";
+        Exception ex = Assert.assertThrows("Исключение не произошло", Exception.class,
+                () -> new Lion(incorrectValueOfSex, feline));
+        Assert.assertEquals("Некорректный текст ислючения","Используйте допустимые значения " +
+                            "пола животного - самец или самка", ex.getMessage());
+    }
 }
